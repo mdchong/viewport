@@ -1,8 +1,81 @@
-/* YOUR NAME GOES HERE */
+/* CSS by Michelle Chong */
 
 /* --------------- ADD CSS RESET TO THE FILE HERE --------------- */
+/* CSS Reset by Andy Bell - https://piccalil.li/blog/a-more-modern-css-reset/ */
 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
 
 /* ----- AUTOPREFIXER FOR VS CODE WAS USED FOR VENDOR PREFIXES ----- */
 /* ---------- VARIABLES ---------- */
@@ -33,6 +106,11 @@
 /* --------------- BEGIN USER PREFERS DARK COLOR SCHEME QUERY --------------- */
 
 /* CHANGE THE BODY'S BACKGROUND COLOR TO THE DARK GRAY IF THE USER PREFERS DARK MODE */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-gray);
+    }
+}
 
 /* --------------- END USER PREFERS DARK COLOR SCHEME QUERY --------------- */
 
@@ -79,24 +157,26 @@ footer .icon{
 
 @-webkit-keyframes icon-animation {
     0% { font-variation-settings: "TIME" 1; }
-  100% { font-variation-settings: "TIME" 100; }
+    100% { font-variation-settings: "TIME" 100; }
 }
 
 @keyframes icon-animation {
     0% { font-variation-settings: "TIME" 1; }
-  100% { font-variation-settings: "TIME" 100; }
+    100% { font-variation-settings: "TIME" 100; }
 }
 
 
 
 /* ----- HANDLE PREFERS REDUCED MOTION FOR THE ICON ANIMATIONS ----- */
 /* --------------- BEGIN USER PREFERS REDUCED MOTION QUERY --------------- */
+@media (prefers-reduced-motion) {
     @-webkit-keyframes icon-animation {
         0% { font-variation-settings: "TIME" 1; }
     }
     @keyframes icon-animation {
         0% { font-variation-settings: "TIME" 1; }
     }
+}
 /* --------------- END USER PREFERS REDUCED MOTION QUERY --------------- */
 
 
@@ -150,7 +230,8 @@ img{
 
 /* ---------- SMALL SCREEN STYLES ---------- */
 /* --------------- BEGIN SMALL SCREEN SIZES --------------- */
-    /* header, footer{
+@media screen and (min-width: 600px) {
+    header, footer{
         background-color: var(--lime-green);
         color: var(--dark-gray);
     }
@@ -175,14 +256,16 @@ img{
     img{
         width: 200px;
         max-width: 200px;
-    } */
+    }
+}
 /* --------------- END SMALL SCREEN SIZES --------------- */
 
 
 
 /* ---------- MEDIUM SCREEN STYLES ---------- */
 /* --------------- BEGIN MEDIUM SCREEN SIZES --------------- */
-    /* header, footer{
+@media screen and (min-width: 720px) {
+    header, footer{
         background-color: var(--black);
         color: var(--white);
     }   
@@ -207,14 +290,16 @@ img{
     #seven{
         grid-column: 3/4;
         grid-row: 3/5;
-    } */
+    }
+}
 /* --------------- END MEDIUM SCREEN SIZES --------------- */
 
 
 
 /* ---------- LARGE SCREEN STYLES ---------- */
 /* --------------- BEGIN LARGE SCREEN SIZES --------------- */
-    /* header, footer{
+@media screen and (min-width: 1040px) {
+    header, footer{
         background-color: var(--lime-green);
         color: var(--dark-gray);
     }
@@ -245,10 +330,9 @@ img{
 
     #seven, #eight{
         grid-row: 3/4;
-    } */
+    }
+}
 /* --------------- END LARGE SCREEN SIZES --------------- */
-
-
 
 /* ---------- ADJUSTING RESPONSIVE IMAGE SIZE ---------- */
 /* --------------- BEGIN RESPONSIVE IMAGE ADJUST SIZES --------------- */
@@ -262,7 +346,8 @@ img{
 
 /* ---------- EXTRA LARGE SCREEN STYLES ---------- */
 /* --------------- BEGIN EXTRA LARGE SCREEN SIZES --------------- */
-    /* header, footer{
+@media screen and (min-width: 1280px) {
+    header, footer{
         background-color: var(--orange);
         padding-left: 5%;
     }
@@ -327,5 +412,6 @@ img{
 
     #three p, #four p, #five p, #six p{
         padding-top: 2em;
-    } */
+    }
+}
 /* --------------- END EXTRA LARGE SCREEN SIZES --------------- */
